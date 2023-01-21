@@ -1,0 +1,3 @@
+(test
+ (name penpal_tracker)
+ (libraries penpal_tracker ounit2))

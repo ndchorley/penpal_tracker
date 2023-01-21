@@ -1,0 +1,4 @@
+(executable
+ (public_name penpal_tracker)
+ (name main)
+ (libraries penpal_tracker))
