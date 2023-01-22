@@ -9,10 +9,13 @@ let read_line list_file =
   let _ = close_in channel in
     line
 
+let parse_penpal line =
+  String.split_on_char '|' line
+
 let track_penpals list_file =
   let parts =
     list_file
     |> read_line
-    |> String.split_on_char '|' in
+    |> parse_penpal in
 
     (String.concat "\n" parts) ^ "\n"
