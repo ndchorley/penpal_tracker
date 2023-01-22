@@ -12,10 +12,11 @@ let read_line list_file =
 let parse_penpal line =
   String.split_on_char '|' line
 
-let track_penpals list_file =
-  let parts =
-    list_file
-    |> read_line
-    |> parse_penpal in
+let format_for_report penpal =
+  (String.concat "\n" penpal) ^ "\n"
 
-    (String.concat "\n" parts) ^ "\n"
+let track_penpals list_file =
+  list_file
+  |> read_line
+  |> parse_penpal
+  |> format_for_report
