@@ -1,4 +1,4 @@
-let read_line list_file =
+let read_lines list_file =
   let rec loop channel lines_so_far =
     let line =
       try Some (input_line channel) with
@@ -14,7 +14,12 @@ let read_line list_file =
   let lines = loop channel [] in
 
   let _ = close_in channel in
-    List.nth lines 2
+      lines
+
+let drop_header lines =
+  lines
+  |> List.tl
+  |> List.tl
 
 let parse_penpal line =
   String.split_on_char '|' line
@@ -24,6 +29,8 @@ let format_for_report penpal =
 
 let track_penpals list_file =
   list_file
-  |> read_line
+  |> read_lines
+  |> drop_header
+  |> List.hd
   |> parse_penpal
   |> format_for_report
