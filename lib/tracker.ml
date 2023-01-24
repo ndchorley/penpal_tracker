@@ -23,7 +23,7 @@ let drop_header lines =
 
 let parse_penpals lines =
   List.map
-    (fun line -> String.split_on_char '|' line)
+    (String.split_on_char '|')
     lines
 
 let format_for_report penpal =
