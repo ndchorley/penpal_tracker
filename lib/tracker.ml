@@ -29,10 +29,14 @@ let parse_penpals lines =
 let format_for_report penpal =
   (String.concat "\n" penpal) ^ "\n"
 
+let make_report penpals =
+  penpals
+  |> List.map format_for_report
+  |> String.concat "\n"
+
 let track_penpals list_file =
   list_file
   |> read_lines
   |> drop_header
   |> parse_penpals
-  |> List.map format_for_report
-  |> String.concat "\n"
+  |> make_report
