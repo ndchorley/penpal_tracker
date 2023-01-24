@@ -9,8 +9,9 @@ let tests =
   "tracking penpals" >::: [
     "produces a report of penpals" >::
       (fun _ ->
-        let report = track_penpals "penpal_list" in
-
+        let report =
+          track_penpals "penpal_list/produces_a_report_of_penpals"
+        in
           assert_equal
             (contents_of "expected/produces_a_report_of_penpals")
             report
