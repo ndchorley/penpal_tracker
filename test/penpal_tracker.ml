@@ -12,7 +12,7 @@ let tests =
         let report = track_penpals "penpal_list" in
 
           assert_equal
-            (contents_of "expected")
+            (contents_of "expected/produces_a_report_of_penpals")
             report
             ~printer:Fun.id
       )
