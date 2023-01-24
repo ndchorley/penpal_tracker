@@ -21,8 +21,10 @@ let drop_header lines =
   |> List.tl
   |> List.tl
 
-let parse_penpal line =
-  String.split_on_char '|' line
+let parse_penpals lines =
+  List.map
+    (fun line -> String.split_on_char '|' line)
+    lines
 
 let format_for_report penpal =
   (String.concat "\n" penpal) ^ "\n"
@@ -31,6 +33,6 @@ let track_penpals list_file =
   list_file
   |> read_lines
   |> drop_header
-  |> List.hd
-  |> parse_penpal
-  |> format_for_report
+  |> parse_penpals
+  |> List.map format_for_report
+  |> String.concat "\n"
