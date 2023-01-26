@@ -1,5 +1,6 @@
-open Parsing
 open Model
+open Parsing
+open Report
 
 let read_lines list_file =
   let rec loop channel lines_so_far =
@@ -23,14 +24,6 @@ let drop_header lines =
   lines
   |> List.tl
   |> List.tl
-
-let format_for_report penpal =
-  (String.concat "\n" [penpal.name; penpal.address]) ^ "\n"
-
-let make_report penpals =
-  penpals
-  |> List.map format_for_report
-  |> String.concat "\n"
 
 let only_those_not_sent_a_letter penpals =
   List.filter
