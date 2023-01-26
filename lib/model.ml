@@ -1,1 +1,2 @@
-type penpal = {name: string; address: string}
+type penpal =
+  {name: string; address: string; letter_sent: bool}

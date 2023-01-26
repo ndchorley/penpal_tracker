@@ -32,9 +32,15 @@ let make_report penpals =
   |> List.map format_for_report
   |> String.concat "\n"
 
+let only_those_not_sent_a_letter penpals =
+  List.filter
+    (fun penpal -> Bool.not penpal.letter_sent)
+    penpals
+
 let track_penpals list_file =
   list_file
   |> read_lines
   |> drop_header
   |> parse_penpals
+  |> only_those_not_sent_a_letter
   |> make_report
