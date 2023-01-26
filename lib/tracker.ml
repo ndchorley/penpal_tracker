@@ -1,4 +1,5 @@
 open Parsing
+open Model
 
 let read_lines list_file =
   let rec loop channel lines_so_far =
@@ -24,7 +25,7 @@ let drop_header lines =
   |> List.tl
 
 let format_for_report penpal =
-  (String.concat "\n" penpal) ^ "\n"
+  (String.concat "\n" [penpal.name; penpal.address]) ^ "\n"
 
 let make_report penpals =
   penpals
