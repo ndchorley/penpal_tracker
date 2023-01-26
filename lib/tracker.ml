@@ -1,3 +1,5 @@
+open Parsing
+
 let read_lines list_file =
   let rec loop channel lines_so_far =
     let line =
@@ -20,11 +22,6 @@ let drop_header lines =
   lines
   |> List.tl
   |> List.tl
-
-let parse_penpals lines =
-  List.map
-    (String.split_on_char '|')
-    lines
 
 let format_for_report penpal =
   (String.concat "\n" penpal) ^ "\n"
