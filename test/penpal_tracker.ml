@@ -33,8 +33,9 @@ let tests =
 
     "and reports if there are no penpals who have not been written to" >::
       (fun _ ->
-        let report = track_penpals
-          "penpal_list/and_reports_if_there_are_no_penpals_who_have_not_been_written_to"
+        let report =
+          track_penpals
+            "penpal_list/and_reports_if_there_are_no_penpals_who_have_not_been_written_to"
         in
           assert_equal
             "You have written to everyone on the list\n"
