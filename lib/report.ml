@@ -17,8 +17,14 @@ let prepend_message report_so_far =
     "You have not written to:\n\n"
     report_so_far
 
+let is_empty penpals =
+  (List.length penpals) == 0
+
 let make_report penpals =
-  penpals
-  |> format_for_report
-  |> join_them_together
-  |> prepend_message
+  if is_empty penpals then
+    "You have written to everyone on the list\n"
+  else
+    penpals
+    |> format_for_report
+    |> join_them_together
+    |> prepend_message
