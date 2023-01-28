@@ -6,3 +6,4 @@ let make_report penpals =
   penpals
   |> List.map format_for_report
   |> String.concat "\n"
+  |> String.cat "You have not written to:\n\n"
