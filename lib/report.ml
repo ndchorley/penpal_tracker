@@ -1,4 +1,5 @@
 open Model
+
 let format_for_report penpals =
   List.map
     (fun penpal ->
@@ -7,8 +8,12 @@ let format_for_report penpals =
     )
     penpals
 
+let prepend_message formatted_penpals =
+  formatted_penpals
+  |> String.concat "\n"
+  |> String.cat "You have not written to:\n\n"
+
 let make_report penpals =
   penpals
   |> format_for_report
-  |> String.concat "\n"
-  |> String.cat "You have not written to:\n\n"
+  |> prepend_message
