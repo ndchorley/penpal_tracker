@@ -8,12 +8,17 @@ let format_for_report penpals =
     )
     penpals
 
-let prepend_message formatted_penpals =
+let join_them_together formatted_penpals =
   formatted_penpals
   |> String.concat "\n"
-  |> String.cat "You have not written to:\n\n"
+
+let prepend_message report_so_far =
+  String.cat
+    "You have not written to:\n\n"
+    report_so_far
 
 let make_report penpals =
   penpals
   |> format_for_report
+  |> join_them_together
   |> prepend_message
