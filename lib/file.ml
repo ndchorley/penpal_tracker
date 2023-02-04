@@ -14,9 +14,13 @@ let read_lines list_file =
   let lines = loop channel [] in
 
   let _ = close_in channel in
-      lines
+      Result.ok lines
 
-let drop_header lines =
-  lines
-  |> List.tl
-  |> List.tl
+let drop_header lines_result =
+  Result.map
+    (fun lines ->
+      lines
+      |> List.tl
+      |> List.tl
+    )
+    lines_result
