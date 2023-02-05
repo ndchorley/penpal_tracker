@@ -20,6 +20,6 @@ let track_penpals list_file =
     |> parse_penpals
     |> only_those_not_sent_a_letter in
 
-    match result with
-    | Ok (penpals) -> make_report penpals
-    | _ -> ""
+      match result with
+      | Ok (penpals) -> make_report penpals
+      | _ -> ""
