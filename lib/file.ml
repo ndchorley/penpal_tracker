@@ -1,14 +1,14 @@
-let read_lines list_file =
-  let rec loop channel lines_so_far =
-    let line =
-      try Some (input_line channel) with
+let rec loop channel lines_so_far =
+  let line =
+    try Some (input_line channel) with
       End_of_file -> None in
 
     match line with
     | Some (line) ->
       loop channel (List.append lines_so_far [line])
-    | None -> lines_so_far in
+    | None -> lines_so_far
 
+let read_lines list_file =
   let channel = open_in list_file in
 
   let lines = loop channel [] in
