@@ -41,6 +41,15 @@ let tests =
             "You have written to everyone on the list\n"
             report
             ~printer:Fun.id
+      );
+
+    "but complains if the file can't be found" >::
+      (fun _ ->
+        let file = "some_directory/does_not_exist" in
+          assert_equal
+            ("Couldn't find penpal list at " ^ file ^ "\n")
+            (track_penpals file)
+            ~printer:Fun.id
       )
   ]
 

@@ -22,4 +22,4 @@ let track_penpals list_file =
 
       match result with
       | Ok (penpals) -> make_report penpals
-      | _ -> ""
+      | Error (message) -> message
