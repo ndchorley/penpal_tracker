@@ -4,3 +4,4 @@
 
 run_stage_and_exit_on_failure "build" ./build.sh
 run_stage_and_exit_on_failure "smoke tests" run_smoke_tests
+run_stage_and_exit_on_failure "install" ./install.sh
