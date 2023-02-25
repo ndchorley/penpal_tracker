@@ -1,20 +1,3 @@
-PYTHON="python3"
-
-function select_python_version() {
-    local OS=$(uname)
-
-    if [ "$OS" = "Linux" ];
-    then
-        PYTHON="python3.10"
-    fi
-}
-
-function run_smoke_tests() {
-    select_python_version
-
-    $PYTHON smoke_test.py
-}
-
 function run_stage_and_exit_on_failure() {
     local STAGE_NAME=$1
     local COMMAND=$2
