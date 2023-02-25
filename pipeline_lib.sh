@@ -1,7 +1,7 @@
 PYTHON="python3"
 
 function select_python_version() {
-    OS=$(uname)
+    local OS=$(uname)
 
     if [ "$OS" = "Linux" ];
     then
