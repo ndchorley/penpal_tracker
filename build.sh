@@ -2,7 +2,9 @@
 
 . build_lib.sh
 
-generate_version_module
+BUILD_COMMIT_HASH=$1
+
+generate_version_module $BUILD_COMMIT_HASH
 
 dune clean
 dune build

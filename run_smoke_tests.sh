@@ -4,4 +4,4 @@
 
 PYTHON=$(select_python_version)
 
-$PYTHON smoke_test.py
+BUILD_COMMIT_HASH=$1 $PYTHON smoke_test.py
