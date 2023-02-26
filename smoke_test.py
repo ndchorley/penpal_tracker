@@ -1,3 +1,4 @@
+import os
 import subprocess
 import unittest
 
@@ -10,9 +11,11 @@ class SmokeTest(unittest.TestCase):
             text=True
         )
 
+        expected_commit_hash = os.environ["BUILD_COMMIT_HASH"]
+
         self.assertEqual(
             completed_process.stdout,
-            "penpal_tracker: some-commit-hash-here\n"
+            f"penpal_tracker: {expected_commit_hash}\n"
         )
 
 
