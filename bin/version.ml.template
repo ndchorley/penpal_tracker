@@ -1,0 +1,2 @@
+let display_version_info =
+  print_endline "penpal_tracker: {BUILD_COMMIT_HASH}"

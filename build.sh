@@ -1,5 +1,9 @@
 #!/bin/bash
 
+. build_lib.sh
+
+generate_version_module
+
 dune clean
 dune build
 
