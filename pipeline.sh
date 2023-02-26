@@ -2,7 +2,7 @@
 
 . pipeline_lib.sh
 
-export BUILD_COMMIT_HASH=some-commit-hash-here
+export BUILD_COMMIT_HASH=$(latest_commit_hash)
 
 run_stage_and_exit_on_failure "build" ./build.sh
 run_stage_and_exit_on_failure "smoke tests" ./run_smoke_tests.sh

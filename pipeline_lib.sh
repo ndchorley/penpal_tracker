@@ -16,3 +16,7 @@ function run_stage_and_exit_on_failure() {
 
     echo -e "\n"
 }
+
+function latest_commit_hash() {
+    git log --pretty=oneline | head -n 1 | awk '{print $1}'
+}
