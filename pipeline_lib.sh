@@ -14,7 +14,7 @@ function run_stage_and_exit_on_failure() {
         exit $?
     fi
 
-    echo -e "\n"
+    echo ""
 }
 
 function latest_commit_hash() {
