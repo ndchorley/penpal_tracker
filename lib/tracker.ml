@@ -1,16 +1,7 @@
 open File
-open Model
+open Filtering
 open Parsing
 open Report
-
-let only_those_not_sent_a_letter penpals_result =
-  Result.map
-    (fun penpals ->
-      List.filter
-        (fun penpal -> Bool.not penpal.letter_sent)
-        penpals
-    )
-    penpals_result
 
 let track_penpals list_file =
   let result =
