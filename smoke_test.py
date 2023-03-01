@@ -15,7 +15,7 @@ class SmokeTest(unittest.TestCase):
 
         self.assertEqual(
             completed_process.stdout,
-            f"penpal_tracker: {expected_commit_hash}\n"
+            f"penpal_tracker: {expected_commit_hash}\n\n"
         )
 
 
