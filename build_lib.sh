@@ -1,5 +1,6 @@
 function generate_version_module() {
     rm bin/version.ml
+
     cp bin/version.ml.template bin/version.ml
 
     local BUILD_COMMIT_HASH=$1
