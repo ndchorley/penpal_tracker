@@ -2,7 +2,7 @@
 
 . build_lib.sh
 
-BUILD_COMMIT_HASH=$1
+BUILD_COMMIT_HASH=${1:-LOCAL}
 
 generate_version_module $BUILD_COMMIT_HASH
 
