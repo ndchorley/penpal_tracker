@@ -9,7 +9,7 @@ let format_for_report penpals =
     penpals
 
 let join_them_together formatted_penpals =
-  String.concat "\n" formatted_penpals
+  String.concat "--\n" formatted_penpals
 
 let prepend_message report_so_far =
   String.cat
