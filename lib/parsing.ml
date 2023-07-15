@@ -1,4 +1,4 @@
-open Model
+open Penpal
 
 let parse_penpal line =
   let parts = (String.split_on_char '|' line) in

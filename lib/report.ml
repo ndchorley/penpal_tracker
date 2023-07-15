@@ -1,4 +1,4 @@
-open Model
+open Penpal
 
 let format_for_report penpals =
   List.map

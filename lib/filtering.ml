@@ -1,4 +1,4 @@
-open Model
+open Penpal
 
 let only_those_not_sent_a_letter penpals_result =
   Result.map
