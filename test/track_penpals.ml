@@ -1,19 +1,6 @@
-open In_channel
+open Helpers
 open OUnit2
 open Penpal_tracker.Tracker
-open Str
-
-let contents_of file =
-  open_in file |> input_all
-
-let contains string what =
-  try (
-    let _ =
-      (search_forward (regexp what) string 0)
-    in
-      true
-  ) with
-    _ -> false
 
 let tests =
   "tracking penpals" >::: [
