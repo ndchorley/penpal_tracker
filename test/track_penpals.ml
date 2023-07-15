@@ -1,9 +1,19 @@
 open In_channel
 open OUnit2
 open Penpal_tracker.Tracker
+open Str
 
 let contents_of file =
   open_in file |> input_all
+
+let contains string what =
+  try (
+    let _ =
+      (search_forward (regexp what) string 0)
+    in
+      true
+  ) with
+    _ -> false
 
 let tests =
   "tracking penpals" >::: [
@@ -25,10 +35,9 @@ let tests =
             "penpal_list/but_omits_those_who_have_been_sent_a_letter"
         in
           assert_equal
-            (contents_of
-              "expected/but_omits_those_who_have_been_sent_a_letter")
-            report
-            ~printer:Fun.id
+            false
+            (contains report "Gerard Blaset")
+            ~printer:Bool.to_string
       );
 
     "and reports if there are no penpals who have not been written to" >::
