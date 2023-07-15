@@ -1,2 +1,5 @@
 type penpal =
-  {name: string; address: string; letter_sent: bool}
+  {name: string;
+  address: string;
+  languages: string;
+  letter_sent: bool}
