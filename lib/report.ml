@@ -1,12 +1,15 @@
 open Penpal
 
+let format_languages languages =
+  Str.replace_first (Str.regexp ",") " and" languages
+
 let format_for_report penpals =
   List.map
     (fun penpal ->
       (String.concat
         "\n" [penpal.name; penpal.address]) ^ "\n\n" ^
         "who writes in " ^
-        (Str.replace_first (Str.regexp ",") " and" penpal.languages) ^ "\n"
+        (format_languages penpal.languages) ^ "\n"
     )
     penpals
 
