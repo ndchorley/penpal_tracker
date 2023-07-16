@@ -5,7 +5,8 @@ let format_for_report penpals =
     (fun penpal ->
       (String.concat
         "\n" [penpal.name; penpal.address]) ^ "\n\n" ^
-        "who writes in: " ^ penpal.languages ^ "\n"
+        "who writes in " ^
+        (Str.replace_first (Str.regexp ",") " and" penpal.languages) ^ "\n"
     )
     penpals
 

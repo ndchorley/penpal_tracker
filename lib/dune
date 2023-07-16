@@ -1,2 +1,3 @@
 (library
- (name penpal_tracker))
+ (name penpal_tracker)
+ (libraries str))
