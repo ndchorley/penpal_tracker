@@ -11,7 +11,7 @@ let format_for_report penpals =
         [penpal.name; penpal.address]
       ) ^
       "\n\n" ^
-      "who writes in " ^ (format_languages penpal.languages) ^
+      "who writes in " ^ (format_languages (List.hd penpal.languages)) ^
       "\n"
     )
     penpals
