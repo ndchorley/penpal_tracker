@@ -9,8 +9,11 @@ let tests =
 
         let formatted = format_languages languages in
 
-          assert_equal "English" formatted ~printer:Fun.id
-      )
+          assert_equal
+            "English"
+            formatted
+            ~printer:Fun.id
+      );
   ]
 
 let _ = run_test_tt_main tests
