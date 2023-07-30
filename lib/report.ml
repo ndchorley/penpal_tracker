@@ -4,12 +4,15 @@ let format_languages languages =
     let is_last index =
       index == (List.length languages) - 1 in
 
+    let is_penultimate index =
+      index == (List.length languages - 2) in
+
       Seq.fold_lefti
         (fun result_so_far index language ->
           let separator =
             if is_last index then
               ""
-            else if index == (List.length languages - 2) then
+            else if is_penultimate index then
               " and "
             else
               ", "
