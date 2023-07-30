@@ -10,12 +10,9 @@ let format_languages languages =
       Seq.fold_lefti
         (fun result_so_far index language ->
           let separator =
-            if on_last index then
-              ""
-            else if on_penultimate index then
-              " and "
-            else
-              ", "
+            if on_last index then ""
+            else if on_penultimate index then " and "
+            else ", "
           in
             result_so_far ^ language ^ separator
         )
