@@ -28,7 +28,7 @@ let tests =
         );
 
       ("but separates more than two languages with a comma " ^
-      "and the final two with the word 'and'") >::
+       "and the final two with the word 'and'") >::
         (fun _ ->
           let languages =
             ["English"; "German"; "French"; "Spanish"]
