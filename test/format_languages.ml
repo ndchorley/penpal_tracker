@@ -25,6 +25,21 @@ let tests =
               "French and English"
               formatted
               ~printer:Fun.id
+        );
+
+      ("but separates more than two languages with a comma " ^
+      "and the final two with the word 'and'") >::
+        (fun _ ->
+          let languages =
+            ["English"; "German"; "French"; "Spanish"]
+          in
+
+          let formatted = format_languages languages in
+
+            assert_equal
+              "English, German, French and Spanish"
+              formatted
+              ~printer:Fun.id
         )
   ]
 

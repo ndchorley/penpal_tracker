@@ -1,9 +1,20 @@
 open Penpal
 
 let format_languages languages =
-  languages
-  |> String.concat ", "
-  |> Str.replace_first (Str.regexp ",") " and"
+    Seq.fold_lefti
+      (fun result_so_far index language ->
+        let separator =
+          if index == (List.length languages) - 1 then
+            ""
+          else if index == (List.length languages - 2) then
+            " and "
+          else
+            ", "
+        in
+          result_so_far ^ language ^ separator
+      )
+      ""
+      (List.to_seq languages)
 
 let format_for_report penpals =
   List.map
