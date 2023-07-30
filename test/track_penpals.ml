@@ -41,12 +41,13 @@ let tests =
 
     "but complains if the file can't be found" >::
       (fun _ ->
-        let file =
-          "some_directory/does_not_exist"
-        in
+        let file = "some_directory/does_not_exist" in
+
+        let message = track_penpals file in
+
           assert_equal
             ("Couldn't find penpal list at " ^ file ^ "\n")
-            (track_penpals file)
+            message
             ~printer:Fun.id
       )
   ]
