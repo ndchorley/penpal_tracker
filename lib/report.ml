@@ -38,9 +38,8 @@ let join_them_together formatted_penpals =
   String.concat "--\n" formatted_penpals
 
 let prepend_message report_so_far =
-  String.cat
-    "You have not written to:\n\n"
-    report_so_far
+  "You have not written to:\n\n" ^
+  report_so_far
 
 let is_empty penpals =
   (List.length penpals) == 0
