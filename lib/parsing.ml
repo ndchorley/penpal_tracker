@@ -1,8 +1,7 @@
 open Penpal
 
 let parse_languages languages_string =
-  languages_string
-  |> Str.split (Str.regexp ", ")
+  Str.split (Str.regexp ", ") languages_string
 
 let parse_penpal line =
   let parts = (String.split_on_char '|' line) in
