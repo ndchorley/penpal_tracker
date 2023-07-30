@@ -25,10 +25,9 @@ let format_languages languages =
 let format_for_report penpals =
   List.map
     (fun penpal ->
-      (String.concat
-        "\n"
-        [penpal.name; penpal.address]
-      ) ^
+      penpal.name ^
+      "\n" ^
+      penpal.address ^
       "\n\n" ^
       "who writes in " ^ (format_languages penpal.languages) ^
       "\n"
