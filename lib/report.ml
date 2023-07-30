@@ -1,18 +1,18 @@
 open Penpal
 
 let format_languages languages =
-    let is_last index =
+    let on_last index =
       index == (List.length languages) - 1 in
 
-    let is_penultimate index =
+    let on_penultimate index =
       index == (List.length languages - 2) in
 
       Seq.fold_lefti
         (fun result_so_far index language ->
           let separator =
-            if is_last index then
+            if on_last index then
               ""
-            else if is_penultimate index then
+            else if on_penultimate index then
               " and "
             else
               ", "
