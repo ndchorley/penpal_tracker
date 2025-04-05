@@ -3,7 +3,7 @@ function select_python_version() {
 
     if [ "$OS" = "Linux" ];
     then
-        echo "python3.10"
+        echo "python3.11"
     else
         echo "python3"
     fi
