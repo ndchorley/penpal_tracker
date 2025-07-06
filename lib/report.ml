@@ -34,8 +34,8 @@ let format_for_report penpals =
 let join_them_together formatted_penpals =
   String.concat "--\n" formatted_penpals
 
-let prepend_message report_so_far =
-  "You have not written to:\n\n" ^
+let prepend_message number_to_write_to report_so_far =
+  "You have not written to " ^ (Int.to_string number_to_write_to) ^ " penpals:\n\n" ^
   report_so_far
 
 let is_empty penpals =
@@ -48,4 +48,4 @@ let make_report penpals =
     penpals
     |> format_for_report
     |> join_them_together
-    |> prepend_message
+    |> prepend_message (List.length penpals)
