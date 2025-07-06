@@ -7,7 +7,7 @@ let rec loop channel lines_so_far =
 
     match line with
     | Some (line) ->
-      loop channel (List.append lines_so_far [line])
+        loop channel (List.append lines_so_far [line])
     | None -> lines_so_far
 
 let read_lines list_file =
