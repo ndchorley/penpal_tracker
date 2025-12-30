@@ -4,13 +4,13 @@ open Penpal_tracker.Tracker
 
 let tests =
   "tracking penpals" >::: [
-    "produces a report of penpals" >::
+    "lists multiple penpals ordered as they are in the file" >::
       (fun _ ->
         let report =
-          track_penpals "penpal_list/produces_a_report_of_penpals"
+          track_penpals "penpal_list/lists_multiple_penpals_ordered_as_they_are_in_the_file"
         in
           assert_equal
-            (contents_of "expected/produces_a_report_of_penpals")
+            (contents_of "expected/lists_multiple_penpals_ordered_as_they_are_in_the_file")
             report
             ~printer:Fun.id
       );
