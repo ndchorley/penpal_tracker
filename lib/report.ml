@@ -35,8 +35,15 @@ let join_them_together formatted_penpals =
   String.concat "--\n" formatted_penpals
 
 let prepend_message number_to_write_to report_so_far =
-  "You have not written to " ^ (Int.to_string number_to_write_to) ^ " penpals:\n\n" ^
-  report_so_far
+  let message =
+    "You have not written to " ^
+      (Int.to_string number_to_write_to) ^
+      " " in
+
+  let penpal_singular_or_plural =
+    if number_to_write_to = 1 then "penpal" else "penpals"
+  in
+    message ^ penpal_singular_or_plural ^ ":\n\n" ^ report_so_far
 
 let is_empty penpals =
   (List.length penpals) == 0

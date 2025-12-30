@@ -4,7 +4,18 @@ open Penpal_tracker.Tracker
 
 let tests =
   "tracking penpals" >::: [
-    "lists multiple penpals ordered as they are in the file" >::
+    "lists the only penpal who hasn't been written to" >::
+      (fun _ ->
+        let report =
+          track_penpals "penpal_list/lists_the_only_penpal_who_hasn't_been_written_to"
+        in
+          assert_equal
+            (contents_of "expected/lists_the_only_penpal_who_hasn't_been_written_to")
+            report
+            ~printer:Fun.id
+      );
+
+    "and lists multiple penpals ordered as they are in the file" >::
       (fun _ ->
         let report =
           track_penpals "penpal_list/lists_multiple_penpals_ordered_as_they_are_in_the_file"
